@@ -1,5 +1,9 @@
 # 🦀 Jamers: JAM Protocol Implementation in Rust
 
+[![Build Status](https://github.com/Shifting-Pigeon/jam-rs/workflows/CI/badge.svg)](https://github.com/Shifting-Pigeon/jam-rs/actions)
+
+![Image](https://github.com/w3f/jam-milestone-delivery/raw/main/static/jam-banner.png)
+
 A complete implementation of the Join-Accumulate Machine (JAM) protocol for Polkadot, written in Rust.
 
 ## 🎯 Project Overview
