@@ -6,3 +6,5 @@ description = "JAM protocol primitives"
 license = "Apache-2.0"
 
 [dependencies]
+blake3.workspace = true
+ed25519-dalek = { workspace = true, features = ["rand_core"] }
