@@ -10,3 +10,4 @@ anyhow = "1.0.98"
 blake3.workspace = true
 ed25519-dalek = { workspace = true, features = ["rand_core"] }
 parity-scale-codec = { workspace = true, features = ["derive"] }
+serde = { workspace = true, features = ["derive"] }

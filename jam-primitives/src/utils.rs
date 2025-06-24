@@ -2,7 +2,7 @@
 //!
 
 use anyhow::Result;
-use parity_scale_codec::{Compact, Decode, Encode, Input};
+pub use parity_scale_codec::{Compact, Decode, Encode, Input};
 
 /// Codec trait combining Encode and Decode (re-exported from parity-scale-codec)
 pub trait Codec: Encode + Decode {}

@@ -278,6 +278,7 @@ dependencies = [
  "blake3",
  "ed25519-dalek",
  "parity-scale-codec",
+ "serde",
 ]
 
 [[package]]
