@@ -1,30 +1,36 @@
-//! # SCALE Codec for JAM Protocol
+//! # Utilities for JAM Protocol
 //!
+//! This module provides utility functions and re-exports commonly used traits.
 
-use anyhow::Result;
-pub use parity_scale_codec::{Compact, Decode, Encode, Input};
+/// Codec module re-exporting parity-scale-codec traits
+pub mod codec {
+    pub use parity_scale_codec::{Compact, Decode, Encode, Input};
 
-/// Codec trait combining Encode and Decode (re-exported from parity-scale-codec)
-pub trait Codec: Encode + Decode {}
+    /// Codec trait combining Encode and Decode (re-exported from parity-scale-codec)
+    pub trait Codec: Encode + Decode {}
 
-/// Blanket impl for re-use where required
-impl<T: Encode + Decode> Codec for T {}
+    /// Blanket impl for re-use where required
+    impl<T: Encode + Decode> Codec for T {}
 
-/// Encode a compact u32 (using parity-scale-codec)
-pub fn encode_compact_u32(value: u32) -> Vec<u8> {
-    Compact(value).encode()
+    /// Encode a compact u32 (using parity-scale-codec)
+    pub fn encode_compact_u32(value: u32) -> Vec<u8> {
+        Compact(value).encode()
+    }
+
+    /// Decode a compact u32 (using parity-scale-codec)
+    pub fn decode_compact_u32<I: Input>(input: &mut I) -> anyhow::Result<u32> {
+        let compact = Compact::<u32>::decode(input)?;
+        Ok(compact.0)
+    }
 }
 
-/// Decode a compact u32 (using parity-scale-codec)
-pub fn decode_compact_u32<I: Input>(input: &mut I) -> Result<u32> {
-    let compact = Compact::<u32>::decode(input)?;
-    Ok(compact.0)
-}
+// Re-export commonly used codec traits at the utils level
+pub use codec::{Codec, Decode, Encode};
 
 // Basic tests for codec use
 #[cfg(test)]
 mod codec_tests {
-    use super::*;
+    use super::codec::*;
 
     #[test]
     fn test_basic_codec() {
