@@ -25,6 +25,7 @@ rand_core ="0.6"
 #Codecs and serializers
 parity-scale-codec = "3.7.5"
 serde = "1"
+serde_bytes = "0.11"
 
 #Misc
 anyhow = "1"
