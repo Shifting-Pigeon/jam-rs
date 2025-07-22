@@ -20,7 +20,7 @@ blake3 = "1.5"
 ed25519-dalek = "2.0"
 k256 = "0.13"
 rand = "0.8"
-rand_core ="0.6"
+rand_core = "0.6"
 
 #Codecs and serializers
 parity-scale-codec = "3.7.5"
