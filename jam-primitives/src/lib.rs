@@ -1,6 +1,7 @@
 pub mod block;
 pub mod crypto;
 pub mod header;
+pub mod transaction;
 pub mod types;
 pub mod utils;
 
